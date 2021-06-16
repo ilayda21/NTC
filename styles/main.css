@@ -1,0 +1,106 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto";
+}
+
+.container {
+	width: inherit;
+	height: inherit;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 340px auto;
+	user-select: none;
+}
+
+.ntc-tableRow-regular td {
+	padding-top: 11px;
+}
+
+.detail-column {
+	background-color: #0387cd;
+	width: 300px;
+	min-width: 200px;
+	padding: 30px 0 0 30px;
+	color: white;
+}
+
+.info-column {
+	margin: 0 35px 0 25px;
+	padding-top: 25px;
+	color: black;
+}
+
+.total-sum-label {
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.detail-column-label {
+	font-weight: 600;
+	font-size: 25px;
+	letter-spacing: 1px;
+	padding-bottom: 25px;
+}
+
+.detail-couple {
+	padding-bottom: 18px;
+}
+
+.detail-couple .detail-label {
+	font-size: 10px;
+	letter-spacing: 0.5px;
+}
+
+.detail-couple .detail-value {
+	font-size: 12px;
+	margin-right: 65px;
+}
+
+.ntc-heading2 {
+	display: none;
+}
+
+th,
+td,
+tr {
+	border: none;
+}
+
+tr > th:last-child {
+	border: none;
+}
+
+.ntc-tableRow-tableHeading th {
+	font-weight: 900;
+	padding-bottom: 7px;
+	font-size: 10px;
+}
+
+span#emph-sum {
+	font-size: 40px;
+	font-family: system-ui;
+	line-height: 30px;
+}
+
+span#sum {
+	font-size: 30px;
+	font-family: system-ui;
+	line-height: 30px;
+}
+
+.total-sum-bold {
+	font-weight: 900;
+}
+
+.ntc-table-main {
+	font-size: 12px;
+}
+
+.total-sum-str-container {
+	font-size: 11px;
+}

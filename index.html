@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/NTCUIKit.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+    
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="./scripts/NTCTable.js"> </script>
+    <script type="text/javascript" src="./scripts/dataHandler.js"> </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="detail-column">
+        <h2 class="detail-column-label">Sipariş detay</h2>
+        <div class="detail-couple">
+            <b class="detail-label">Firma adı</b>
+            <div class="detail-value">Halil Pazarlama</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Adres</b>
+            <div class="detail-value">Kozyatağı Mahallesi, Marmara Cad. Şale Apt. No: 7 Kadıköy/İstanbul</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Telefon</b>
+            <div class="detail-value">0090 0216 123 4567</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">e-Posta</b>
+            <div class="detail-value">kapinizda@halilpazarlama.com</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Ünvan</b>
+            <div class="detail-value">Halil Pazarlama İnş. Tah. Turz. Tic. Ltd. Şti.</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Fatura adresi</b>
+            <div class="detail-value">Kozyatağı Mahallesi, Marmara Cad. Şale Apt. No: 7 Kadıköy/İstanbul</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Vergi dairesi</b>
+            <div class="detail-value">Büyük mükellefler vd.</div>
+        </div>
+
+        <div class="detail-couple">
+            <b class="detail-label">Vergi no</b>
+            <div class="detail-value">123456789012</div>
+        </div>
+    </div>
+    <div class="info-column">
+        <div id="info" class="info-data-container"></div>
+        <div class="total-sum-label">Toplam</div>
+        <span id="emph-sum"></span>
+        <span id="sum"></span>
+        <div class="total-sum-str-container">
+            <span class="total-sum-bold">Yalnız</span>
+            <span id="total-sum-str"></span>
+        </div>
+    </div>
+    
+    <script defer type="text/javascript">
+        const data = getData();
+        const obj = new NTCTable({
+            data: formatData(data)
+        }, ["Ürün kodu", "Ürün adı", "Birim Fiyatı(TL)", "Adet", "Fiyat(TL)"]);
+        const htmlAsStr = obj.generateTableHtmlCode();
+        document.getElementById('info').innerHTML += htmlAsStr;
+
+        const totalCostAsString = totalCost(obj.dataSource.data);
+        const totalCostAsArray = totalCostAsString.split(",");
+        document.getElementById('emph-sum').innerHTML += totalCostAsArray[0] + ",";
+        document.getElementById('sum').innerHTML += totalCostAsArray[1] + " TL";
+        document.getElementById('total-sum-str').innerHTML += numToString(totalCostAsString);
+    </script>
+</div>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
